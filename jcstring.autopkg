@@ -1,0 +1,33 @@
+nuget{
+    nuspec{
+        id = jcstring;
+        version : 0.0.0.4;
+        title: String Library For Learning NuGet;
+        authors: {JC};
+        owners: {JC};
+        licenseUrl: "http://www.apache.org/licenses/LICENSE-2.0";
+        requireLicenseAcceptance:false;
+        tags: { native };
+    }
+	
+	    // the files that go into the content folders
+    files {
+
+        include: {"JCString\JCString.h"};
+		
+		[x86,v110,Debug] { 
+        lib: Debug\JCString.lib;
+        symbols: JCString\Release\vc110.pdb;
+        bin: Debug\JCString.lib;
+		}
+		[x86,v110,Release] { 
+        lib: Release\JCString.lib;
+        symbols: JCString\Release\vc110.pdb;
+        bin: Release\JCString.lib;
+		}
+    }
+	
+	targets {
+            Defines += HAS_JCSTRING;
+        }
+}
